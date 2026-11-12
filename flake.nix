@@ -15,14 +15,19 @@
             url = "github:jacopone/antigravity-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nix-index-database = {
+            url = "github:nix-community/nix-index-database";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
 
-    outputs = {self, nixpkgs, home-manager, ...}@inputs: {
+    outputs = {self, nixpkgs, home-manager, nix-index-database, ...}@inputs: {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
             modules = [ 
                 ./hosts/nixos/configuration.nix 
+                nix-index-database.nixosModules.default
                 home-manager.nixosModules.home-manager
                 {
                     home-manager.useGlobalPkgs = true;

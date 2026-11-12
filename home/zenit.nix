@@ -15,7 +15,7 @@
         wl-clipboard
         github-cli
 
-        gcc gnumake gdb python3 nodejs
+        gcc gnumake gdb python3 nodejs clang-tools
         inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
     ];
 
