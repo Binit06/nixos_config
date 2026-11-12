@@ -79,6 +79,7 @@
     unzip
     tree
     ripgrep
+    p7zip
   ];
 
   programs.nix-ld.enable = true;

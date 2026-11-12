@@ -52,9 +52,6 @@
         xwayland-satellite
         brightnessctl
         xdg-utils
-        glib
-        gsettings-desktop-schemas
-        adwaita-icon-theme
       ];
   };
 }

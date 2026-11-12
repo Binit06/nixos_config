@@ -17,6 +17,9 @@
 
         gcc gnumake gdb python3 nodejs clang-tools
         inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
+
+        lutris
+        qbittorrent
     ];
 
     xdg.mimeApps = {
@@ -45,6 +48,15 @@
             name = "phinger-cursors-dark";
             package = pkgs.phinger-cursors;
             size = 24;
+        };
+    };
+
+    qt = {
+        enable = true;
+        platformTheme.name = "adwaita";
+        style = {
+            name = "adwaita-dark";
+            package = [pkgs.adwaita-qt pkgs.adwaita-qt6];
         };
     };
 
