@@ -21,6 +21,10 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  # Virtualisation
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Time and locale
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_IN";
@@ -45,7 +49,7 @@
   users.users."zenit" = {
     isNormalUser = true;
     description = "zenit";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "kvm" "libvirtd" ];
   };
 
   # Nix

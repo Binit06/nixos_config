@@ -6,18 +6,26 @@
     home.stateVersion = "26.05";
 
     home.packages = with pkgs; [
+        #terms & uts
         alacritty
-        firefox
         fastfetch
         ncdu
+        wl-clipboard
+
+        #browsing
+        firefox
+        brave
+        discord
+
+        #audio
         pavucontrol
         playerctl
-        wl-clipboard
-        github-cli
-
-        gcc gnumake gdb python3 nodejs clang-tools
+        
+        #dev
+        github-cli gcc gnumake gdb python3 nodejs clang-tools
         inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-
+        
+        #misc
         lutris
         qbittorrent
     ];
@@ -80,7 +88,7 @@
         x11.enable = true;
     };
 
-    dconf.settings."org/gnome/desktop/interface". color-scheme = "prefer-dark";
+    dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     xdg.configFile."gtk-4.0/gtk.css".force = true;
     xdg.configFile."mimeapps.list".force = true;
 }
