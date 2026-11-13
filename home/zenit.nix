@@ -21,10 +21,19 @@
         lutris
         qbittorrent
     ];
+    
+    # handles the correct terminal to use when needed by application
+    xdg.terminal-exec = {
+        enable = true;
+        settings = {
+            default = [ "Alacritty.desktop" ];
+        };
+    };
 
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
+            "text/plain" = "nvim.desktop";
             "text/html" = "firefox.desktop";
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";

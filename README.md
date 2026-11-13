@@ -42,4 +42,5 @@
 - Show current boot errors = `journalctl -p err -b`
 - Show previous boot logs = `journalctl -b -1`
 
-
+## misc
+- find a file from a point while suppressing perm error = `find / -name "nvim.desktop" 2>/dev/null`
