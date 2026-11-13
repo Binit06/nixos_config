@@ -52,6 +52,7 @@
         xwayland-satellite
         brightnessctl
         xdg-utils
+        xarchiver
       ];
   };
 }

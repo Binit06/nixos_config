@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
+  nixpkgs.overlays = [
+    (import ../../overlays/thunar-xarchiver.nix)
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
