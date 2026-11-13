@@ -34,6 +34,7 @@
         enable = true;
         defaultApplications = {
             "text/plain" = "nvim.desktop";
+            "application/pdf" = "firefox.desktop";
             "text/html" = "firefox.desktop";
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";
