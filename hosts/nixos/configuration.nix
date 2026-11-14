@@ -52,6 +52,14 @@
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "kvm" "libvirtd" ];
   };
 
+  # Hardware Graphics
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
+
   # Nix
   nixpkgs.config.allowUnfree = true;
 
