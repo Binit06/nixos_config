@@ -97,6 +97,7 @@
     ripgrep
     p7zip
     file
+    ddcutil
   ];
 
   programs.nix-ld.enable = true;
