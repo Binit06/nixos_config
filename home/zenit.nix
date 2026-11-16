@@ -20,6 +20,7 @@
         #audio
         pavucontrol
         playerctl
+        mprisence
         
         #dev
         github-cli gcc gnumake gdb python3 nodejs clang-tools
@@ -29,7 +30,26 @@
         lutris
         qbittorrent
     ];
-    
+
+    # systemd service to autoenable mprisence
+    systemd.user.services.mprisence = {
+        Unit = {
+            Description = "Discord Rich Presence for MPRIS";
+            After = [ "graphical-session.target" ];
+            PartOf = [ "graphical-session.target" ];
+        };
+
+        Service = {
+            ExecStart = "${pkgs.mprisence}/bin/mprisence";
+            Restart = "on-failure";
+            RestartSec = 5;
+        };
+
+        Install = {
+            WantedBy = [ "graphical-session.target" ];
+        };
+    };
+
     # handles the correct terminal to use when needed by application
     xdg.terminal-exec = {
         enable = true;
