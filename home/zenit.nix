@@ -109,6 +109,10 @@
     };
 
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    xdg.configFile."gtk-4.0/gtk.css".force = true;
-    xdg.configFile."mimeapps.list".force = true;
+    xdg.configFile = {
+        "gtk-4.0/gtk.css".force = true;
+        "mimeapps.list".force = true;
+        "niri/config.kdl".source = ./dotfiles/niri/config.kdl;
+        "nvim".source = ./dotfiles/nvim;
+    };
 }
