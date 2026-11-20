@@ -15,7 +15,7 @@
         #browsing
         firefox
         brave
-        discord
+        vesktop
 
         #fonts
         nerd-fonts.jetbrains-mono
