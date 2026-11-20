@@ -1,10 +1,16 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   imports = [ inputs.noctalia.nixosModules.default ];
     
   programs = {
       niri.enable = true;
       noctalia.enable = true;
+      sway = {
+          enable = true;
+          wrapperFeatures.gtk = true;
+          extraOptions = [ "--unsupported-gpu" ];
+          extraPackages = [];
+      };
       thunar = {
           enable = true;
           plugins = with pkgs; [
@@ -21,7 +27,7 @@
       greetd = {
         enable = true;
         settings.default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session";
           user = "greeter";
         };
       };
@@ -38,16 +44,35 @@
 
   security.pam.services.greetd.enableGnomeKeyring = true;
 
-  xdg.portal = {
+xdg.portal = {
+  enable = true;
+  wlr = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config.common.default = ["gtk" "gnome"];
+    settings = {
+      screencast = {
+        chooser_type = "dmenu";
+        chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu -p 'Share screen'";
+      };
+    };
   };
-
+  extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+  config = {
+    common.default = [ "*" ];
+    sway = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+    };
+  };
+};
   environment = {
-      sessionVariables.NIXOS_OZONE_WL = "1";
+      sessionVariables = {
+          NIXOS_OZONE_WL = "1";
+          XDG_CURRENT_DESKTOP = "sway";
+          XDG_SESSION_TYPE = "wayland";
+      };
       systemPackages = with pkgs; [
         xwayland-satellite
         brightnessctl

@@ -17,7 +17,11 @@
         brave
         discord
 
+        #fonts
+        nerd-fonts.jetbrains-mono
+
         #audio
+        pulseaudio
         pavucontrol
         playerctl
         mprisence
@@ -29,6 +33,21 @@
         #misc
         lutris
         qbittorrent
+
+        #sway
+        wl-clipboard
+        waybar
+        wayfreeze
+        slurp
+        grim
+        mako
+        swayidle
+        swaylock
+        swaybg
+        swayimg
+        cliphist
+        rofi
+        rofimoji
     ];
 
     # systemd service to autoenable mprisence
@@ -62,12 +81,25 @@
         enable = true;
         defaultApplications = {
             "text/plain" = "nvim.desktop";
+            "application/x-zerosize" = "nvim.desktop";
+
             "application/pdf" = "firefox.desktop";
             "text/html" = "firefox.desktop";
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";
             "x-scheme-handler/about" = "firefox.desktop";
             "x-scheme-handler/unknown" = "firefox.desktop";
+
+            "image/png" = "swayimg.desktop";
+            "image/jpeg" = "swayimg.desktop";
+            "image/gif" = "swayimg.desktop";
+            "image/webp" = "swayimg.desktop";
+            "image/svg+xml" = "swayimg.desktop";
+            "image/bmp" = "swayimg.desktop";
+            "image/tiff" = "swayimg.desktop";
+            "image/avif" = "swayimg.desktop";
+            "image/heic" = "swayimg.desktop";
+            "image/x-icon" = "swayimg.desktop";
         };
     };
 
@@ -91,13 +123,9 @@
 
     qt = {
         enable = true;
-        platformTheme.name = "adwaita";
-        style = {
-            name = "adwaita-dark";
-            package = [pkgs.adwaita-qt pkgs.adwaita-qt6];
-        };
+        platformTheme.name = "kvantum";
+        style.name = "kvantum";
     };
-
     home.pointerCursor = {
         enable = true;
         name = "phinger-cursors-dark";
@@ -111,8 +139,12 @@
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     xdg.configFile = {
         "gtk-4.0/gtk.css".force = true;
+        "Kvantum/kvantum.kvconfig".source = ./dotfiles/kvantum/kvantum.kvconfig;
         "mimeapps.list".force = true;
         "niri/config.kdl".source = ./dotfiles/niri/config.kdl;
         "nvim".source = ./dotfiles/nvim;
+        "sway".source = ./dotfiles/sway;
+        "swayimg".source = ./dotfiles/swayimg;
+        "swaylock".source = ./dotfiles/swaylock;
     };
 }

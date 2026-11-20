@@ -44,3 +44,4 @@
 
 ## misc
 - find a file from a point while suppressing perm error = `find / -name "nvim.desktop" 2>/dev/null`
+- ownership transfer = `sudo chown -R zenit:users ~/nixos-conf`
