@@ -48,6 +48,7 @@
         cliphist
         rofi
         rofimoji
+        bc
     ];
 
     # systemd service to autoenable mprisence
@@ -135,6 +136,7 @@
         gtk.enable = true;
         x11.enable = true;
     };
+    fonts.fontconfig.enable = true;
 
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     xdg.configFile = {
@@ -146,5 +148,8 @@
         "sway".source = ./dotfiles/sway;
         "swayimg".source = ./dotfiles/swayimg;
         "swaylock".source = ./dotfiles/swaylock;
+    };
+    xdg.dataFile = {
+        "fonts/Waycat.ttf".source = ./fonts/Waycat.ttf;
     };
 }
