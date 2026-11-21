@@ -35,7 +35,6 @@
         qbittorrent
 
         #sway
-        wl-clipboard
         waybar
         wayfreeze
         slurp
