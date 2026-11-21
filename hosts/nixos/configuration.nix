@@ -2,6 +2,7 @@
 {
   nixpkgs.overlays = [
     (import ../../overlays/thunar-xarchiver.nix)
+    (import ../../overlays/btop-utf.nix)
   ];
 
   imports = [

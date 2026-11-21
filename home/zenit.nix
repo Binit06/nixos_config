@@ -148,6 +148,7 @@
         "niri".source = ./dotfiles/niri;
         "nvim".source = ./dotfiles/nvim;
         "sway".source = ./dotfiles/sway;
+        "rofi".source = ./dotfiles/rofi;
         "swayimg".source = ./dotfiles/swayimg;
         "swaylock".source = ./dotfiles/swaylock;
     };
