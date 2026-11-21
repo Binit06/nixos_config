@@ -140,9 +140,9 @@
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     xdg.configFile = {
         "gtk-4.0/gtk.css".force = true;
-        "Kvantum/kvantum.kvconfig".source = ./dotfiles/kvantum/kvantum.kvconfig;
         "mimeapps.list".force = true;
-        "niri/config.kdl".source = ./dotfiles/niri/config.kdl;
+        "Kvantum".source = ./dotfiles/kvantum;
+        "niri".source = ./dotfiles/niri;
         "nvim".source = ./dotfiles/nvim;
         "sway".source = ./dotfiles/sway;
         "swayimg".source = ./dotfiles/swayimg;
