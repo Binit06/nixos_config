@@ -21,11 +21,12 @@
         #fonts
         nerd-fonts.jetbrains-mono
 
-        #audio
+        #audio & video
         pulseaudio
         pavucontrol
         playerctl
         mprisence
+        mpv
         
         #dev
         github-cli gcc gnumake gdb python3 nodejs clang-tools
@@ -143,6 +144,7 @@
         "gtk-4.0/gtk.css".force = true;
         "mimeapps.list".force = true;
         "Kvantum".source = ./dotfiles/kvantum;
+        "mpv".source = ./dotfiles/mpv;
         "niri".source = ./dotfiles/niri;
         "nvim".source = ./dotfiles/nvim;
         "sway".source = ./dotfiles/sway;

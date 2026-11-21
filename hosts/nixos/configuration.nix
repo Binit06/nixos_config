@@ -99,6 +99,7 @@
     p7zip
     file
     ddcutil
+    ffmpeg
   ];
 
   programs.nix-ld.enable = true;
