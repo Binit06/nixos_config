@@ -10,6 +10,7 @@
         alacritty
         fastfetch
         ncdu
+        btop
         wl-clipboard
 
         #browsing
