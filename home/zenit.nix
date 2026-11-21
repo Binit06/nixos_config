@@ -35,7 +35,7 @@
         qbittorrent
 
         #sway
-        waybar
+        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.waybar
         wayfreeze
         slurp
         grim

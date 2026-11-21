@@ -4,6 +4,7 @@
     inputs = {
         self.submodules = true;
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+        nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
         noctalia = {
             url = "github:noctalia-dev/noctalia/cachix";
