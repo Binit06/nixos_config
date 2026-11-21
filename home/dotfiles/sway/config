@@ -84,8 +84,8 @@ exec swayidle -w \
 #
     # Start applications
     bindsym $mod+Return exec $term
-    bindsym $mod+Ctrl+B exec $browser
-    bindsym $mod+Ctrl+E exec $file
+    bindsym $mod+B exec $browser
+    bindsym $mod+E exec $file
 
     # Kill focused window
     bindsym $mod+q kill
@@ -104,14 +104,16 @@ exec swayidle -w \
     bindsym $mod+Shift+c reload
     bindsym $mod+Escape exec ~/.config/sway/scripts/power.sh
     bindsym $mod+Alt+l exec swaylock -f
+
+    bindsym $mod+m exec ~/.config/sway/scripts/waybar.sh
     
-    # dismissed message does not come even on the history
-    bindsym $mod+n exec makoctl dismiss -a -h
     bindsym $mod+Ctrl+n exec sh -c 'makoctl mode -t do-not-disturb; pkill -RTMIN+10 waybar'
+
     bindsym $mod+comma exec sh -c 'cliphist list | rofi -dmenu -i -no-show-icons -p clipboard | cliphist decode | wl-copy'
     bindsym $mod+period exec rofimoji --selector rofi --clipboarder wl-copy --typer wtype --action type copy
+
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     
     for_window [floating] border pixel 2
     for_window [app_id="pavucontrol"] floating enable, resize set 1000 500
@@ -177,14 +179,13 @@ exec swayidle -w \
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+bracketright splith
+    bindsym $mod+bracketleft splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+m layout default
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+w layout tabbed
+    bindsym $mod+Shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
