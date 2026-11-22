@@ -3,12 +3,12 @@ color=0b1418
 image=/home/zenit/Pictures/Walls/city-of-tears.png
 scaling=fill
 
-indicator-radius=60
+indicator-radius=75
 indicator-thickness=4
 
 line-color=00000000
 separator-color=00000000
-inside-color=121212f2
+inside-color=121212ff
 ring-color=5c5c5c
 text-color=e6e6e6
 text-caps-lock-color=ffb454
@@ -18,15 +18,15 @@ bs-hl-color=ff5c5c
 caps-lock-key-hl-color=ffb454
 caps-lock-bs-hl-color=ff5c5c
 
-inside-clear-color=121212f2
+inside-clear-color=121212ff
 ring-clear-color=ffb454
 text-clear-color=ffb454
 
-inside-ver-color=121212f2
+inside-ver-color=121212ff
 ring-ver-color=6ee7a0
 text-ver-color=6ee7a0
 
-inside-wrong-color=121212f2
+inside-wrong-color=121212ff
 ring-wrong-color=ff5c5c
 text-wrong-color=ff5c5c
 

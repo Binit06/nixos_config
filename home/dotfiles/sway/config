@@ -106,7 +106,6 @@ input type:touchpad {
     bindsym $mod+Alt+l exec swaylock -f
 
     bindsym $mod+m exec ~/.config/sway/scripts/waybar.sh
-    
     bindsym $mod+Ctrl+n exec sh -c 'makoctl mode -t do-not-disturb; pkill -RTMIN+10 waybar'
 
     bindsym $mod+comma exec sh -c 'cliphist list | rofi -dmenu -i -no-show-icons -p clipboard | cliphist decode | wl-copy'

@@ -71,6 +71,21 @@
         };
     };
 
+    services.gammastep = {
+        enable = true;
+        dawnTime = "6:00-7:30";
+        duskTime = "18:00-19:30";
+        temperature = {
+            day = 3500;
+            night = 3500;
+        };
+        settings.general = {
+            fade = 1;
+            brightness = 1.0;
+            adjustment-method = "wayland";
+        };
+    };
+
     # handles the correct terminal to use when needed by application
     xdg.terminal-exec = {
         enable = true;
