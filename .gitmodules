@@ -1,3 +1,3 @@
 [submodule "home/dotfiles/nvim"]
-	path = home/dotfiles/nvim
-	url = git@github.com:Binit06/nvim-config.git
+    path = home/dotfiles/nvim
+    url = https://github.com/Binit06/nvim-config.git
