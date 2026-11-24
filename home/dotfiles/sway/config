@@ -70,6 +70,11 @@ input type:touchpad {
     natural_scroll enabled
     middle_emulation enabled
 }
+
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
 #
 #   input type:keyboard {
 #       xkb_layout "eu"
