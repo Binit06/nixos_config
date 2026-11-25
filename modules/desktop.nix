@@ -23,6 +23,9 @@
       dconf.enable = true;
   };
 
+  #obs-studio virtual camera
+  programs.obs-studio.enableVirtualCamera = true;
+
   services = {
       greetd = {
         enable = true;
